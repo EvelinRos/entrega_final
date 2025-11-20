@@ -1,0 +1,114 @@
+/* Contenedor principal */
+.login-container {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background: none;
+}
+
+/* Imagen de fondo */
+.background-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+
+.background-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: -1;
+}
+
+/* Contenido centrado */
+.login-content {
+  position: relative;
+  z-index: 10;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+/* Tarjeta */
+.login-card {
+  max-width: 450px;
+  width: 100%;
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.45); 
+  border: 1px solid rgba(255, 255, 255, 0.45); 
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.45);
+  color: #000;
+  border-radius: 1.5rem;
+}
+
+/* Logo circular */
+.brand-icon {
+  width: 2.8rem;
+  height: 2.8rem;
+  background-color: #b31217;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+}
+
+/* Inputs */
+.form-control:focus {
+  border-color: #f91616;
+  box-shadow: 0 0 0 0.2rem rgba(249, 22, 22, 0.25);
+}
+
+/* Botón login principal */
+.btn-primary-custom {
+  background-color: #b31217;
+  border-color: #b31217;
+  font-size: 1.05rem;
+}
+.btn-primary-custom:hover {
+  background-color: #8b0f13;
+  border-color: #8b0f13;
+}
+
+/* Textos */
+.text-orange {
+  color: #b31217;
+}
+.text-orange:hover {
+  color: #8b0f13;
+  text-decoration: underline;
+}
+
+/* Checkbox color */
+.form-check-input:checked {
+  background-color: #b31217;
+  border-color: #b31217;
+}
+
+/* general */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+}
+
+/* input */
+.custom-input-group .input-group-text {
+  border-right: none;
+  background-color: #fff;
+}
+
+.custom-input-group .form-control {
+  border-left: none;
+  background-color: #fff;
+  border-right: none;
+}

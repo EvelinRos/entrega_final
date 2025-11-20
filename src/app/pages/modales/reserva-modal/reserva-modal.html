@@ -1,0 +1,64 @@
+<div class="modal fade" id="modal-reserva" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content" id="reservaModal">
+      <div class="modal-wrapper">
+        <!-- HEADER -->
+        <div class="modal-header">
+          <h5 class="modal-title">
+            <i class="bi bi-calendar2-heart me-2"></i>
+            Detalles del Viaje
+          </h5>
+          <button class="btn-close" data-bs-dismiss="modal" (click)="cerrar()"></button>
+        </div>
+
+        <!-- SUBTÍTULO -->
+        <p class="px-3 modal-subtitle">
+          Selecciona la fecha y número de personas para tu viaje a {{ destino }}.
+        </p>
+
+        <div class="modal-body">
+          <!-- RESUMEN DEL DESTINO -->
+          <div class="reserva-summary">
+            <h5>{{ destino }}</h5>
+            <small>{{ descripcion }}</small>
+          </div>
+
+          <!-- FECHA & VIAJEROS -->
+          <div class="reserva-row">
+            <!-- Fecha -->
+            <div class="flex-fill">
+              <label class="form-label fw-semibold mb-1">Fecha de salida</label>
+              <input type="date" class="form-control" [(ngModel)]="fecha" />
+            </div>
+
+            <!-- Viajeros -->
+            <div class="flex-fill">
+              <label class="form-label fw-semibold mb-1">Número de viajeros</label>
+              <select class="form-select" [(ngModel)]="viajeros" (change)="calcularTotal()">
+                <option *ngFor="let v of opcionesViajeros" [ngValue]="v">{{ v }} personas</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- PRICE BOX -->
+          <div class="reserva-pricebox">
+            <div class="labels">
+              Precio por persona:<br />
+              Viajeros:<br />
+              <strong>Total:</strong>
+            </div>
+
+            <div class="text-end">
+              <div class="price-small">${{ precio }}</div>
+              <div>{{ viajeros }}</div>
+              <div class="total">${{ total }}</div>
+            </div>
+          </div>
+
+          <!-- BOTÓN -->
+          <button class="btn-continue" (click)="confirmarReserva()">Continuar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

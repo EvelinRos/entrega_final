@@ -1,0 +1,95 @@
+<!-- MODAL DESTINO: BALI -->
+<div
+  class="modal fade"
+  id="modal-bali"
+  tabindex="-1"
+  aria-labelledby="modalBaliLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content border-0 rounded-4 shadow-lg">
+      <div class="modal-body p-4">
+        <!-- Cerrar -->
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h4 class="fw-bold mb-0">Bali, Indonesia</h4>
+          <button
+            t
+            ype="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+
+        <p class="text-muted small mb-4">
+          Información detallada sobre el destino Bali en Indonesia, incluyendo precios, duración y
+          lo que incluye el viaje.
+        </p>
+
+        <!-- Imagen -->
+        <div class="position-relative">
+          <img src="assets/img/bali-indonesia.jpg" class="img-fluid w-100" alt="Bali" />
+          <span class="badge bg-dark text-white position-absolute top-0 start-0 m-3">
+            Popular
+          </span>
+          <div
+            class="rating-badge position-absolute top-0 end-0 m-3 d-flex align-items-center bg-dark text-white rounded-pill px-3 py-1"
+          >
+            <i class="bi bi-star-fill text-warning me-1"></i>
+            <span>4.7/5</span>
+          </div>
+        </div>
+
+        <!-- Detalles  -->
+        <div class="d-flex justify-content-between text-center mb-4">
+          <div class="flex-fill">
+            <i class="bi bi-calendar-event text-danger fs-4"></i>
+            <p class="mb-0 fw-bold">Duración</p>
+            <small>5 días</small>
+          </div>
+          <div class="flex-fill">
+            <i class="bi bi-people text-danger fs-4"></i>
+            <p class="mb-0 fw-bold">Grupo</p>
+            <small>2–8 personas</small>
+          </div>
+          <div class="flex-fill">
+            <i class="bi bi-geo-alt text-danger fs-4"></i>
+            <p class="mb-0 fw-bold">Ubicación</p>
+            <small>Indonesia</small>
+          </div>
+        </div>
+
+        <!-- Descripción -->
+        <h6 class="fw-bold">Descripción</h6>
+        <p class="text-muted">
+          Descubre la isla de los dioses con sus templos sagrados y playas paradisíacas. Vive la
+          riqueza cultural y natural de este increíble destino con nuestros guías locales. Una
+          experiencia que combina historia, tradición y aventura en cada momento.
+        </p>
+
+        <!-- Incluye -->
+        <h6 class="fw-bold mt-4">Lo que incluye</h6>
+        <ul class="text-muted mb-4">
+          <li>Templo Tanah Lot</li>
+          <li>Clase de cocina balinesa</li>
+          <li>Masaje tradicional</li>
+          <li>Terrazas de arroz Jatiluwih</li>
+          <li>Snorkeling en Nusa Penida</li>
+        </ul>
+
+        <!-- Precio y botones -->
+        <div class="d-flex justify-content-between align-items-center border-top pt-3">
+          <div>
+            <h4 class="fw-bold text-danger mb-0">
+              $1,200 <small class="text-muted fs-6">por persona</small>
+            </h4>
+          </div>
+          <div class="ms-auto">
+            <button class="btn btn-outline-secondary me-2" data-bs-dismiss="modal">Cerrar</button>
+            <button class="btn btn-danger" (click)="enviarReserva()">Reservar Ahora</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

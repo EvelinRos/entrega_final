@@ -1,0 +1,114 @@
+/* Contenedor Principal */
+.bg-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  background: none;
+}
+
+/* Imagen De Fondo */
+.bg-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+
+/* Imagen */
+.bg-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.1);
+  z-index: -1;
+}
+
+/* Tarjeta */
+.card {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 420px;
+  padding: 2rem;
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.45);
+  border-radius: 1.5rem;
+  color: #000;
+  text-align: center;
+}
+
+/* Títulos Y Textos */
+.card h4 {
+  color: #b31217;
+  font-weight: 700;
+}
+
+.card p {
+  color: #000000;
+}
+
+/* ==== Inputs ==== */
+.form-control {
+  border: 1px solid #ddd;
+  border-radius: 2rem;
+  padding-left: 2.5rem;
+  height: 45px;
+  font-size: 0.95rem;
+}
+
+.form-control:focus {
+  border-color: #f91616;
+  box-shadow: 0 0 0 0.2rem rgba(249, 22, 22, 0.25);
+}
+
+/* Íconos */
+.position-relative i {
+  color: #b31217;
+}
+
+/* Botón Principal */
+.btn-danger {
+  background-color: #b31217;
+  border-color: #b31217;
+  border-radius: 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  height: 45px;
+  transition: 0.3s ease;
+}
+
+.btn-danger:hover {
+  background-color: #8b0f13;
+  border-color: #8b0f13;
+}
+
+
+.text-danger {
+  color: #b31217 !important;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.text-danger:hover {
+  color: #8b0f13 !important;
+  text-decoration: underline;
+}
+
+/* Checkbox */
+.form-check-input:checked {
+  background-color: #b31217;
+  border-color: #b31217;
+}

@@ -1,0 +1,94 @@
+<!-- MODAL DESTINO: TOKIO -->
+<div
+  class="modal fade"
+  id="modalTokio"
+  tabindex="-1"
+  aria-labelledby="modalTokioLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content border-0 rounded-4 shadow-lg">
+      <div class="modal-body p-4">
+        <!-- Cerrar -->
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h4 class="fw-bold mb-0">Tokio</h4>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+
+        <p class="text-muted small mb-3">
+          Información detallada sobre el destino Tokio en Japón, incluyendo precios, duración y qué
+          incluye el viaje.
+        </p>
+
+        <!-- Imagen -->
+        <div class="position-relative mb-4">
+          <img src="assets/img/tokio-japon.jpg" class="img-fluid w-100" alt="Tokio" />
+          <span class="badge bg-dark text-white position-absolute top-0 start-0 m-3">
+            Popular
+          </span>
+
+          <div
+            class="rating-badge position-absolute top-0 end-0 m-3 d-flex align-items-center bg-dark text-white rounded-pill px-3 py-1"
+          >
+            <i class="bi bi-star-fill text-warning me-1"></i>
+            <span>4.8/5</span>
+          </div>
+        </div>
+
+        <!-- Detalles -->
+        <div class="d-flex justify-content-between text-center mb-4">
+          <div class="flex-fill">
+            <i class="bi bi-calendar-event text-danger fs-4"></i>
+            <p class="mb-0 fw-bold">Duración</p>
+            <small>7 días</small>
+          </div>
+          <div class="flex-fill">
+            <i class="bi bi-people text-danger fs-4"></i>
+            <p class="mb-0 fw-bold">Grupo</p>
+            <small>2–12 personas</small>
+          </div>
+          <div class="flex-fill">
+            <i class="bi bi-geo-alt text-danger fs-4"></i>
+            <p class="mb-0 fw-bold">Ubicación</p>
+            <small>Japón</small>
+          </div>
+        </div>
+
+        <!-- Descripción -->
+        <h6 class="fw-bold">Descripción</h6>
+        <p class="text-muted">
+          Explora la fascinante mezcla de tradición y modernidad en la capital japonesa. Descubre la
+          riqueza cultural y natural de este increíble destino con nuestros guías expertos locales.
+          Una experiencia única que combina historia, tradición y aventura en cada momento del
+          viaje.
+        </p>
+
+        <!-- Incluye -->
+        <h6 class="fw-bold mt-4">Lo que incluye</h6>
+        <ul class="text-muted mb-4">
+          <li>Visita al Templo Senso-ji</li>
+          <li>Experiencia en onsen</li>
+          <li>Guía local experto</li>
+          <li>Tour por Shibuya y Harajuku</li>
+          <li>Cena kaiseki tradicional</li>
+        </ul>
+
+        <!-- Precio y botones -->
+        <div class="d-flex justify-content-between align-items-center border-top pt-3">
+          <h4 class="fw-bold text-danger mb-0">
+            $2,800 <small class="text-muted fs-6">por persona</small>
+          </h4>
+          <div class="ms-auto">
+            <button class="btn btn-outline-secondary me-2" data-bs-dismiss="modal">Cerrar</button>
+            <button class="btn btn-danger" (click)="enviarReserva()">Reservar Ahora</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

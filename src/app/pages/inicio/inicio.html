@@ -1,0 +1,524 @@
+<header class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center" href="#">
+      <i class="bi bi-geo-alt text-danger me-2"></i>
+      <span class="fw-bold fs-4">AsiaTravel</span>
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#menuNav"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="menuNav">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a href="#experiencias" class="nav-link">Experiencias</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">Destinos</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">Contacto</a>
+        </li>
+      </ul>
+      <button class="btn btn-outline-danger ms-3 me-2 d-none d-lg-inline" routerLink="/usuarios">
+        <i class="bi bi-people"></i> Ver Usuarios Registrados
+      </button>
+      <button class="btn btn-danger" routerLink="/login">
+        <i class="bi bi-box-arrow-right"></i> Cerrar Sesión
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section
+  class="hero position-relative text-center text-white d-flex align-items-center justify-content-center"
+>
+  <img
+    src="assets/img/hero.jpg"
+    class="w-100 h-100 object-fit-cover position-absolute top-0 start-0"
+    style="filter: brightness(0.5)"
+    alt="Fondo Asia"
+  />
+  <div class="bg-overlay"></div>
+
+  <div class="container position-relative z-2">
+    <h1 class="display-4 fw-bold mb-3">Descubre la Magia de Asia</h1>
+    <p class="lead mb-5">
+      Explora templos milenarios, ciudades vibrantes y paisajes increíbles. Tu aventura asiática
+      perfecta te está esperando.
+    </p>
+
+    <!-- Formulario de búsqueda -->
+    <div class="bg-white rounded-3 p-4 shadow-lg text-dark">
+      <form class="row g-3 align-items-end">
+        <div class="col-md-3">
+          <label class="form-label fw-bold"
+            ><i data-lucide="map-pin" class="me-2"></i>Destino</label
+          >
+          <select class="form-select">
+            <option selected>Seleccionar destino</option>
+            <option value="tokyo">Tokio, Japón</option>
+            <option value="bangkok">Bangkok, Tailandia</option>
+            <option value="bali">Bali, Indonesia</option>
+            <option value="seoul">Seúl, Corea del Sur</option>
+            <option value="singapore">Singapur</option>
+            <option value="vietnam">Vietnam</option>
+          </select>
+        </div>
+
+        <div class="col-md-3">
+          <label class="form-label fw-bold"
+            ><i data-lucide="calendar" class="me-2"></i>Fecha de salida</label
+          >
+          <input type="date" class="form-control" />
+        </div>
+
+        <div class="col-md-3">
+          <label class="form-label fw-bold"><i data-lucide="users" class="me-2"></i>Viajeros</label>
+          <select class="form-select">
+            <option selected>Personas</option>
+            <option>1 persona</option>
+            <option>2 personas</option>
+            <option>3 personas</option>
+            <option>4 personas</option>
+            <option>5+ personas</option>
+          </select>
+        </div>
+
+        <div class="col-md-3">
+          <button type="submit" class="btn btn-danger w-100 py-2">Buscar Viajes</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- INFOCARDS -->
+<section class="py-5 bg-light">
+  <div class="container text-center mb-5">
+    <span class="badge bg-secondary-subtle text-dark mb-2 px-3 py-2 rounded-pill"
+      >Información de Viajes</span
+    >
+    <h4 class="fw-bold">Todo lo que Necesitas Saber</h4>
+    <p class="text-muted">
+      Consejos importantes, información cultural y detalles prácticos para tu aventura asiática.
+    </p>
+  </div>
+
+  <div class="container">
+    <div class="row g-4">
+      <!-- Card 1 -->
+      <div class="col-md-4">
+        <div class="info-card success">
+          <span class="badge">Éxito</span>
+          <h6>¡Temporada Ideal para Viajar!</h6>
+          <p class="text-muted">
+            Marzo a Mayo y Septiembre a Noviembre son las mejores épocas para visitar la mayoría de
+            destinos asiáticos. Clima templado y menos multitudes te esperan.
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col-md-4">
+        <div class="info-card warning">
+          <span class="badge">Advertencia</span>
+          <h6>Documentación Requerida</h6>
+          <p class="text-muted">
+            Verifica que tu pasaporte tenga al menos 6 meses de vigencia. Algunos países requieren
+            visa con anticipación. Te ayudamos con todos los trámites.
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col-md-4">
+        <div class="info-card cultural">
+          <span class="badge">Información Cultural</span>
+          <h6>Costumbres Locales en Templos</h6>
+          <p class="text-muted">
+            En templos budistas e hinduistas, viste conservadoramente y retira tus zapatos al
+            ingresar. Mantén silencio y evita apuntar con los pies hacia estatuas sagradas.
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="col-md-4">
+        <div class="info-card tip">
+          <span class="badge">Consejo de Viaje</span>
+          <h6>Grupos Pequeños, Experiencias Auténticas</h6>
+          <p class="text-muted">
+            Nuestros grupos de máximo 12 personas te permiten acceder a experiencias exclusivas y
+            crear conexiones genuinas con las culturas locales.
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="col-md-4">
+        <div class="info-card info">
+          <span class="badge">Información</span>
+          <h6>Moneda y Pagos</h6>
+          <p class="text-muted">
+            Lleva efectivo para mercados locales y templos. Las tarjetas se aceptan en hoteles y
+            restaurantes principales. Te proporcionamos una guía de cambio por país.
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="col-md-4">
+        <div class="info-card tip">
+          <span class="badge">Consejo de Viaje</span>
+          <h6>Gastronomía Segura</h6>
+          <p class="text-muted">
+            Prueba la auténtica comida callejera siguiendo la regla: come donde comen los locales.
+            Evita hielo en bebidas y frutas ya peladas de vendedores ambulantes.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DESTINATION CARDS -->
+<section class="py-5 bg-light">
+  <div class="container text-center mb-5">
+    <h2 class="fw-bold">Destinos Populares</h2>
+    <p class="text-muted col-lg-8 col-md-8 mx-auto">
+      Desde los rascacielos de Singapur hasta los templos milenarios de Kioto, descubre la
+      diversidad y belleza de Asia con nuestros tours cuidadosamente diseñados.
+    </p>
+  </div>
+
+  <div class="container">
+    <div class="row g-4">
+      <!-- CARD 1 -->
+      <div class="col-md-6 col-lg-3">
+        <div class="card h-100 shadow-sm border-2 rounded-5">
+          <img src="assets/img/tokio-japon.jpg" class="card-img-top rounded-top-3" alt="Tokio" />
+          <div class="card-body">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <span class="badge bg-danger-subtle text-danger">Popular</span>
+              <span class="text-muted small"><i class="bi bi-star"></i> 4.8</span>
+            </div>
+            <h5 class="fw-bold mb-0">Tokio</h5>
+            <p class="text-muted mb-1" class="bi bi-geo-alt">Japón</p>
+            <p class="small text-secondary mb-3">
+              Explora la fascinante mezcla de tradición y modernidad en la capital...
+            </p>
+            <div class="d-flex justify-content-between small text-muted mt-2">
+              <span><i data-lucide="calendar" class="bi bi-clock"></i> 7 días</span>
+              <span><i data-lucide="users" class="bi bi-people"></i> 2-12 personas</span>
+            </div>
+            <div class="d-flex justify-content-between align-items-center my-3">
+              <span class="fw-bold text-danger"
+                >$2,800 <small class="text-muted d-block">por persona</small></span
+              >
+              <button class="btn btn-outline-danger btn-sm" (click)="openModal('tokio')">
+                Ver Detalles
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 2 -->
+      <div class="col-md-6 col-lg-3">
+        <div class="card h-100 shadow-sm border-2 rounded-5">
+          <img src="assets/img/bali-indonesia.jpg" class="card-img-top rounded-top-3" alt="Bali" />
+          <div class="card-body">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <span class="badge bg-danger-subtle text-danger">Popular</span>
+              <span class="text-muted small"><i class="bi bi-star"></i> 4.7</span>
+            </div>
+            <h5 class="fw-bold mb-0">Bali</h5>
+            <p class="text-muted mb-1" class="bi bi-geo-alt">Indonesia</p>
+            <p class="small text-secondary mb-3">
+              Descubre la isla de los dioses con sus templos sagrados y playas...
+            </p>
+
+            <div class="d-flex justify-content-between small text-muted mt-4">
+              <span><i data-lucide="calendar" class="bi bi-clock"></i> 5 días</span>
+              <span><i data-lucide="users" class="bi bi-people"></i> 2-8 personas</span>
+            </div>
+            <div class="d-flex justify-content-between align-items-center my-3">
+              <span class="fw-bold text-danger"
+                >$1,200 <small class="text-muted d-block">por persona</small></span
+              >
+              <button class="btn btn-outline-danger btn-sm" (click)="openModal('bali')">
+                Ver Detalles
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 3 -->
+      <div class="col-md-6 col-lg-3">
+        <div class="card h-100 shadow-sm border-2 rounded-5">
+          <img
+            src="assets/img/bangkok-tailandia.jpg"
+            class="card-img-top rounded-top-3"
+            alt="Bangkok"
+          />
+          <div class="card-body">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <span class="badge bg-secondary-subtle text-dark">Destino</span>
+              <span class="text-muted small"><i class="bi bi-star"></i> 4.6</span>
+            </div>
+            <h5 class="fw-bold mb-0">Bangkok</h5>
+            <p class="text-muted mb-1" class="bi bi-geo-alt">Tailandia</p>
+            <p class="small text-secondary mb-3">
+              Sumérgete en la vibrante cultura tailandesa en esta metrópolis llena de...
+            </p>
+            <div class="d-flex justify-content-between small text-muted">
+              <span><i data-lucide="calendar" class="bi bi-clock"></i> 4 días</span>
+              <span><i data-lucide="users" class="bi bi-people"></i> 2-10 personas</span>
+            </div>
+            <div class="d-flex justify-content-between align-items-center my-4">
+              <span class="fw-bold text-danger"
+                >$950 <small class="text-muted d-block">por persona</small></span
+              >
+              <button class="btn btn-outline-danger btn-sm" (click)="openModal('bangkok')">
+                Ver Detalles
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 4 -->
+      <div class="col-md-6 col-lg-3">
+        <div class="card h-100 shadow-sm border-2 rounded-5">
+          <img
+            src="assets/img/seul-coreadelsur.jpg"
+            class="card-img-top rounded-top-3"
+            alt="Seúl"
+          />
+          <div class="card-body">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <span class="badge bg-secondary-subtle text-dark">Nuevo</span>
+              <span class="text-muted small"><i class="bi bi-star"></i> 4.7</span>
+            </div>
+            <h5 class="fw-bold mb-0">Seúl</h5>
+            <p class="text-muted mb-1" class="bi bi-geo-alt">Corea del Sur</p>
+            <p class="small text-secondary mb-3">
+              Experimenta la cultura K-pop, tecnología avanzada y tradiciones...
+            </p>
+            <div class="d-flex justify-content-between small text-muted mt-4">
+              <span><i data-lucide="calendar" class="bi bi-clock"></i> 6 días</span>
+              <span><i data-lucide="users" class="bi bi-people"></i> 2-8 personas</span>
+            </div>
+            <div class="d-flex justify-content-between align-items-center my-3">
+              <span class="fw-bold text-danger"
+                >$1,800 <small class="text-muted d-block">por persona</small></span
+              >
+              <button class="btn btn-outline-danger btn-sm" (click)="openModal('seul')">
+                Ver Detalles
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 5 -->
+      <div class="col-md-6 col-lg-3">
+        <div class="card h-100 shadow-sm border-2 rounded-5">
+          <img src="assets/img/singapur.jpg" class="card-img-top rounded-top-3" alt="Seúl" />
+          <div class="card-body">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <span class="badge bg-danger-subtle text-danger">Popular</span>
+              <span class="text-muted small"><i class="bi bi-star"></i> 4.9</span>
+            </div>
+            <h5 class="fw-bold mb-0">Singapur</h5>
+            <p class="text-muted mb-1" class="bi bi-geo-alt">Singapur</p>
+            <p class="small text-secondary mb-3">
+              La ciudad-jardín del futuro con su impresionante arquitectura y...
+            </p>
+            <br />
+            <div class="d-flex justify-content-between small text-muted mt-2">
+              <span><i data-lucide="calendar" class="bi bi-clock"></i> 4 días</span>
+              <span><i data-lucide="users" class="bi bi-people"></i> 2-6 personas</span>
+            </div>
+            <div class="d-flex justify-content-between align-items-center my-3">
+              <span class="fw-bold text-danger"
+                >$2,200 <small class="text-muted d-block">por persona</small></span
+              >
+              <button class="btn btn-outline-danger btn-sm" (click)="openModal('singapur')">
+                Ver Detalles
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 6 -->
+      <div class="col-md-6 col-lg-3">
+        <div class="card h-100 shadow-sm border-2 rounded-5">
+          <img src="assets/img/kioto-japon.jpg" class="card-img-top rounded-top-3" alt="Seúl" />
+          <div class="card-body">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <span class="badge bg-secondary-subtle text-dark">Destino</span>
+              <span class="text-muted small"><i class="bi bi-star"></i> 4.8</span>
+            </div>
+            <h5 class="fw-bold mb-0">Kioto</h5>
+            <p class="text-muted mb-1" class="bi bi-geo-alt">Japón</p>
+            <p class="small text-secondary mb-3">
+              La antigua capital de Japón con sus templos dorados y tradiciones...
+            </p>
+            <br />
+            <div class="d-flex justify-content-between small text-muted mt-2">
+              <span><i data-lucide="calendar" class="bi bi-clock"></i> 5 días</span>
+              <span><i data-lucide="users" class="bi bi-people"></i> 2-8 personas</span>
+            </div>
+            <div class="d-flex justify-content-between align-items-center my-3">
+              <span class="fw-bold text-danger"
+                >$2,400 <small class="text-muted d-block">por persona</small></span
+              >
+              <button class="btn btn-outline-danger btn-sm" (click)="openModal('kioto')">
+                Ver Detalles
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 7 -->
+      <div class="col-md-6 col-lg-3">
+        <div class="card h-100 shadow-sm border-2 rounded-5">
+          <img src="assets/img/ha long-vietnam.jpg" class="card-img-top rounded-top-3" alt="Seúl" />
+          <div class="card-body">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <span class="badge bg-danger-subtle text-danger">Popular</span>
+              <span class="text-muted small"><i class="bi bi-star"></i> 4.6</span>
+            </div>
+            <h5 class="fw-bold mb-0">Ha Long</h5>
+            <p class="text-muted mb-1" class="bi bi-geo-alt">Vietnam</p>
+            <p class="small text-secondary mb-3">
+              Navega entre las místicas formaciones rocosas de esta maravilla natural.
+            </p>
+            <div class="d-flex justify-content-between small text-muted mt-4">
+              <span><i data-lucide="calendar" class="bi bi-clock"></i> 3 días</span>
+              <span><i data-lucide="users" class="bi bi-people"></i> 2-12 personas</span>
+            </div>
+            <div class="d-flex justify-content-between align-items-center my-3">
+              <span class="fw-bold text-danger"
+                >$800 <small class="text-muted d-block">por persona</small></span
+              >
+              <button class="btn btn-outline-danger btn-sm" (click)="openModal('halong')">
+                Ver Detalles
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 8 -->
+      <div class="col-md-6 col-lg-3">
+        <div class="card h-100 shadow-sm border-2 rounded-5">
+          <img
+            src="assets/img/palawan-filipinas.jpg"
+            class="card-img-top rounded-top-3"
+            alt="Seúl"
+          />
+          <div class="card-body">
+            <div class="d-flex justify-content-between align-items-center">
+              <span class="badge bg-secondary-subtle text-dark">Nuevo</span>
+              <span class="text-muted small"><i class="bi bi-star"></i> 4.7</span>
+            </div>
+            <h5 class="fw-bold mb-0">Palawan</h5>
+            <p class="text-muted mb-1" class="bi bi-geo-alt">Filipinas</p>
+            <p class="small text-secondary mb-3">
+              El último paraíso terrestre con aguas cristalinas y biodiversidad única.
+            </p>
+            <div class="d-flex justify-content-between small text-muted mt-4">
+              <span><i data-lucide="calendar" class="bi bi-clock"></i> 6 días</span>
+              <span><i data-lucide="users" class="bi bi-people"></i> 2-10 personas</span>
+            </div>
+            <div class="d-flex justify-content-between align-items-center my-3">
+              <span class="fw-bold text-danger"
+                >$1,100 <small class="text-muted d-block">por persona</small></span
+              >
+              <button class="btn btn-outline-danger btn-sm" (click)="openModal('palawan')">
+                Ver Detalles
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<section id="contacto">
+  <footer class="bg-dark text-white pt-5 pb-3">
+    <div class="container">
+      <div class="row">
+        <!-- Información -->
+        <div class="col-md-4 mb-4">
+          <h5 class="fw-bold">AsiaTravel</h5>
+          <p>
+            Tu puerta de entrada a las experiencias más auténticas de Asia. Creamos viajes únicos
+            que conectan culturas y crean memorias para toda la vida.
+          </p>
+          <p class="mb-1"><i data-lucide="phone" class="me-2"></i>+1 (555) 123-4567</p>
+          <p><i data-lucide="mail" class="me-2"></i>info@asiatravel.com</p>
+        </div>
+
+        <!-- Destinos -->
+        <div class="col-md-4 mb-4">
+          <h5 class="fw-bold">Destinos</h5>
+          <ul class="list-unstyled">
+            <li>🇯🇵 Japón</li>
+            <li>🇹🇭 Tailandia</li>
+            <li>🇮🇩 Indonesia</li>
+            <li>🇰🇷 Corea del Sur</li>
+            <li>🇻🇳 Vietnam</li>
+            <li>🇵🇭 Filipinas</li>
+          </ul>
+        </div>
+
+        <!-- Servicios -->
+        <div class="col-md-4 mb-4">
+          <h5 class="fw-bold">Servicios</h5>
+          <ul class="list-unstyled">
+            <li>Tours Privados</li>
+            <li>Grupos Pequeños</li>
+            <li>Experiencias Culturales</li>
+            <li>Aventura y Naturaleza</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="text-center mt-3 border-top border-secondary pt-3">
+        <small>© 2025 AsiaTravel. Todos los derechos reservados.</small>
+      </div>
+    </div>
+  </footer>
+</section>
+<!-- Importar modal-->
+<app-tokio-modal (reservar)="abrirReserva($event)"></app-tokio-modal>
+<app-bali-modal (reservar)="abrirReserva($event)"></app-bali-modal>
+<app-bangkok-modal (reservar)="abrirReserva($event)"></app-bangkok-modal>
+<app-seul-modal (reservar)="abrirReserva($event)"></app-seul-modal>
+<app-singapur-modal (reservar)="abrirReserva($event)"></app-singapur-modal>
+<app-kioto-modal (reservar)="abrirReserva($event)"></app-kioto-modal>
+<app-halong-modal (reservar)="abrirReserva($event)"></app-halong-modal>
+<app-palawan-modal (reservar)="abrirReserva($event)"></app-palawan-modal>
+<app-reserva-modal
+  [destino]="selectedDestination"
+  [precio]="selectedPrice"
+  [descripcion]="selectedDescription"
+  [show]="showReservationModal"
+  (close)="cerrarReserva()"
+  (confirm)="recibirReserva($event)"
+></app-reserva-modal>

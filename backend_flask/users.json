@@ -1,0 +1,14 @@
+{
+    "admin@gmail.com": {
+        "nombre": "admin",
+        "email": "admin@gmail.com",
+        "password": "Admin123@",
+        "pais": "Colombia"
+    },
+    "admin2@gmail.com": {
+        "nombre": "admin2",
+        "email": "admin2@gmail.com",
+        "password": "Admin123@",
+        "pais": "M\u00e9xico"
+    }
+}

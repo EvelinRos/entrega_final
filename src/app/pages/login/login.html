@@ -1,0 +1,102 @@
+<div class="login-container">
+  <!-- Fondo -->
+  <img src="assets/img/fondo_login.jpg" alt="Asia temple" class="background-image" />
+  <div class="background-overlay"></div>
+
+  <!-- Contenido centrado -->
+  <div class="login-content">
+    <div class="card login-card shadow-lg rounded-4 p-4 border-0">
+      <!-- Encabezado -->
+      <div class="card-header text-center border-0 pb-2 bg-transparent">
+        <div class="brand-icon">
+          <i class="bi bi-geo-alt-fill text-white"></i>
+        </div>
+        <h2 class="brand-title">AsiaTravel</h2>
+        <p class="brand-subtitle">Descubre los tesoros de Asia</p>
+      </div>
+
+      <!-- Cuerpo -->
+      <div class="card-body">
+        <!-- REACTIVE FORM -->
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+          <!-- Email -->
+          <div class="input-group mb-3 custom-input-group">
+            <span class="input-group-text">
+              <i class="bi bi-person"></i>
+            </span>
+
+            <input
+              type="email"
+              class="form-control ps-5"
+              formControlName="email"
+              placeholder="Email"
+            />
+          </div>
+          <small
+            *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.invalid"
+            class="text-danger"
+          >
+            Ingresa un correo válido
+          </small>
+
+          <!-- Contraseña -->
+          <div class="input-group mb-3 custom-input-group">
+            <span class="input-group-text">
+              <i class="bi bi-lock"></i>
+            </span>
+
+            <input
+              [type]="showPassword ? 'text' : 'password'"
+              class="form-control ps-5 pe-5"
+              formControlName="password"
+              placeholder="Contraseña"
+            />
+
+            <span class="input-group-text eye-icon" id="togglePasswoord">
+              <i
+                class="bi"
+                [ngClass]="showPassword ? 'bi-eye-slash' : 'bi-eye'"
+                style="cursor: pointer"
+                (click)="togglePassword()"
+              ></i>
+            </span>
+          </div>
+
+          <small
+            *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.invalid"
+            class="text-danger"
+          >
+            La contraseña es obligatoria
+          </small>
+
+          <!-- Recordarme -->
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="remember" />
+              <label class="form-check-label" for="remember">Recordarme</label>
+            </div>
+            <a routerLink="/olvidar-con" class="text-orange text-decoration-none">
+              ¿Olvidaste tu contraseña?
+            </a>
+          </div>
+
+          <!-- Botón Login -->
+          <button type="submit" class="btn btn-primary btn-primary-custom w-100 fw-medium">
+            Iniciar Sesión
+          </button>
+        </form>
+
+        <!-- Registro -->
+        <div class="text-center mt-3">
+          <p class="mb-0 small">
+            ¿No tienes una cuenta?
+            <a routerLink="/registrar" class="text-orange text-decoration-none">Regístrate aquí</a>
+          </p>
+        </div>
+
+        <!-- Error API -->
+        <p *ngIf="apiError" class="text-danger text-center mt-2">{{ apiError }}</p>
+      </div>
+    </div>
+  </div>
+</div>

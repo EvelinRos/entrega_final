@@ -1,0 +1,92 @@
+<!-- MODAL DESTINO: SEÚL -->
+<div
+  class="modal fade"
+  id="modalSeul"
+  tabindex="-1"
+  aria-labelledby="modalSeulLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content border-0 rounded-4 shadow-lg">
+      <div class="modal-body p-4">
+        <!-- Cerrar -->
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h4 class="fw-bold mb-0">Seúl</h4>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+
+        <p class="text-muted small mb-3">
+          Información detallada sobre el destino Seúl en Corea del Sur, incluyendo precios, duración
+          y qué incluye el viaje.
+        </p>
+
+        <!-- Imagen -->
+        <div class="position-relative mb-4">
+          <img src="assets/img/seul-coreadelsur.jpg" class="img-fluid rounded-3" alt="Bangkok" />
+          <span class="badge btn-dark text-white position-absolute top-0 start-0 m-3"> Nuevo </span>
+
+          <div
+            class="rating-badge position-absolute top-0 end-0 m-3 d-flex align-items-center bg-dark text-white rounded-pill px-3 py-1"
+          >
+            <i class="bi bi-star-fill text-warning me-1"></i>
+            <span>4.7/5</span>
+          </div>
+        </div>
+
+        <!-- Detalles -->
+        <div class="d-flex justify-content-between text-center mb-4">
+          <div class="flex-fill">
+            <i class="bi bi-calendar-event text-danger fs-4"></i>
+            <p class="mb-0 fw-bold">Duración</p>
+            <small>6 días</small>
+          </div>
+          <div class="flex-fill">
+            <i class="bi bi-people text-danger fs-4"></i>
+            <p class="mb-0 fw-bold">Grupo</p>
+            <small>2–8 personas</small>
+          </div>
+          <div class="flex-fill">
+            <i class="bi bi-geo-alt text-danger fs-4"></i>
+            <p class="mb-0 fw-bold">Ubicación</p>
+            <small>Corea del Sur</small>
+          </div>
+        </div>
+
+        <!-- Descripción -->
+        <h6 class="fw-bold">Descripción</h6>
+        <p class="text-muted">
+          Experimenta la cultura K-pop, tecnología avanzada y tradiciones milenarias. Descubre la
+          riqueza cultural y natural de este increíble destino con nuestros guías expertos locales.
+          Una experiencia única que combina historia, tradición y aventura en cada momento del
+          viaje.
+        </p>
+
+        <!-- Incluye -->
+        <h6 class="fw-bold mt-4">Lo que incluye</h6>
+        <ul class="text-muted mb-4">
+          <li>Palacio Gyeongbokgung</li>
+          <li>Experiencia K-beauty</li>
+          <li>Visita a Jeju Island</li>
+          <li>Barrio Hongdae</li>
+          <li>BBQ coreano auténtico</li>
+        </ul>
+
+        <!-- Precio y botones -->
+        <div class="d-flex justify-content-between align-items-center border-top pt-3">
+          <h4 class="fw-bold text-danger mb-0">
+            $1,800 <small class="text-muted fs-6">por persona</small>
+          </h4>
+          <div class="ms-auto">
+            <button class="btn btn-outline-secondary me-2" data-bs-dismiss="modal">Cerrar</button>
+            <button class="btn btn-danger" (click)="enviarReserva()">Reservar Ahora</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

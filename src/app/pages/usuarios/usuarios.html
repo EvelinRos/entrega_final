@@ -1,0 +1,41 @@
+<!-- Fondo global -->
+<div class="background-wrapper">
+  <img src="assets/img/usuarios.jpg" alt="Fondo usuarios" class="background-image" />
+  <div class="background-overlay"></div>
+</div>
+
+<!-- Contenido -->
+<div class="usuarios-container">
+  <a
+    routerLink="/inicio"
+    class="btn btn-outline-secondary rounded-pill border-1 d-inline-flex align-items-center gap-2 mb-3 px-3"
+  >
+    <i class="bi bi-arrow-left"></i>
+    Volver
+  </a>
+
+  <h2 class="titulo">Usuarios Registrados</h2>
+
+  <div *ngIf="cargando" class="loading">Cargando...</div>
+  <div *ngIf="error" class="text-danger">{{ error }}</div>
+
+  <table *ngIf="usuarios.length > 0" class="tabla-usuarios shadow-lg">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Email</th>
+        <th>País</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let u of usuarios">
+        <td>{{ u.nombre }}</td>
+        <td>{{ u.email }}</td>
+        <td>{{ u.pais }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p *ngIf="!cargando && usuarios.length === 0">No hay usuarios registrados.</p>
+</div>

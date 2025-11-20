@@ -1,0 +1,163 @@
+<div class="d-flex justify-content-center align-items-center vh-100 position-relative">
+  <!-- Imagen de fondo -->
+  <img
+    src="assets/img/registrarse.jpg"
+    class="w-100 h-100 object-fit-cover position-absolute top-0 start-0"
+    style="filter: brightness(0.35)"
+    alt="Fondo Registro"
+  />
+
+  <!-- Formulario -->
+  <div class="card p-4 rounded-4 position-relative" style="z-index: 1; width: 400px">
+    <h3 class="text-center mb-3 fw-bold">Crear cuenta</h3>
+    <p class="text-center mb-4">Únete para descubrir los tesoros de Asia</p>
+
+    <!-- Error backend -->
+    <div *ngIf="apiError" class="text-danger text-center mb-3">
+      {{ apiError }}
+    </div>
+
+    <form (ngSubmit)="onSubmit()" [formGroup]="registerForm" novalidate>
+      <!-- Nombre -->
+      <div class="input-group mb-3">
+        <span class="input-group-text"><i class="bi bi-person"></i></span>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Nombre completo"
+          formControlName="nombre"
+        />
+      </div>
+      <div
+        *ngIf="registerForm.get('nombre')?.invalid && registerForm.get('nombre')?.touched"
+        class="text-danger small mb-2"
+      >
+        El nombre es obligatorio y debe tener al menos 3 caracteres.
+      </div>
+
+      <!-- Email -->
+      <div class="input-group mb-3">
+        <span class="input-group-text"><i class="bi bi-envelope"></i></span>
+        <input
+          type="email"
+          class="form-control"
+          placeholder="Correo electrónico"
+          formControlName="email"
+        />
+      </div>
+      <div
+        *ngIf="registerForm.get('email')?.invalid && registerForm.get('email')?.touched"
+        class="text-danger small mb-2"
+      >
+        Ingresa un correo electrónico válido.
+      </div>
+
+      <!-- Contraseña -->
+      <div class="input-group mb-3">
+        <span class="input-group-text"><i class="bi bi-lock"></i></span>
+
+        <input
+          [type]="showPassword1 ? 'text' : 'password'"
+          class="form-control"
+          placeholder="Contraseña"
+          formControlName="password"
+        />
+
+        <!-- Botón mostrar/ocultar contraseña -->
+        <button
+          type="button"
+          class="btn btn-outline-secondary"
+          (click)="togglePassword('password1')"
+          aria-label="Mostrar u ocultar contraseña"
+          title="Mostrar u ocultar contraseña"
+        >
+          <i class="bi" [ngClass]="{ 'bi-eye': showPassword1, 'bi-eye-slash': !showPassword1 }"></i>
+        </button>
+      </div>
+      <div
+        *ngIf="registerForm.get('password')?.invalid && registerForm.get('password')?.touched"
+        class="text-danger small mb-2"
+      >
+        La contraseña debe tener al menos 8 caracteres, una mayúscula, una minúscula y un número.
+      </div>
+
+      <!-- Confirmar contraseña -->
+      <div class="input-group mb-3">
+        <span class="input-group-text"><i class="bi bi-lock"></i></span>
+
+        <input
+          [type]="showPassword2 ? 'text' : 'password'"
+          class="form-control"
+          placeholder="Confirmar contraseña"
+          formControlName="confirmPassword"
+        />
+
+        <!-- Botón -->
+        <button
+          type="button"
+          class="btn btn-outline-secondary"
+          (click)="togglePassword('password2')"
+          aria-label="Mostrar u ocultar confirmar contraseña"
+          title="Mostrar u ocultar confirmar contraseña"
+        >
+          <i class="bi" [ngClass]="{ 'bi-eye': showPassword2, 'bi-eye-slash': !showPassword2 }"></i>
+        </button>
+      </div>
+
+      <div
+        *ngIf="
+          registerForm.hasError('passwordMismatch') && registerForm.get('confirmPassword')?.touched
+        "
+        class="text-danger small mb-2"
+      >
+        Las contraseñas no coinciden.
+      </div>
+
+      <!-- País -->
+      <div class="input-group mb-3">
+        <span class="input-group-text"><i class="bi bi-geo-alt"></i></span>
+        <select class="form-select" formControlName="pais">
+          <option value="">Selecciona tu país</option>
+          <option value="Colombia">Colombia</option>
+          <option value="México">México</option>
+          <option value="Perú">Perú</option>
+          <option value="España">España</option>
+        </select>
+      </div>
+
+      <div
+        *ngIf="registerForm.get('pais')?.invalid && registerForm.get('pais')?.touched"
+        class="text-danger small mb-2"
+      >
+        Selecciona tu país.
+      </div>
+
+      <!-- Términos -->
+      <div class="form-check mb-3">
+        <input class="form-check-input" type="checkbox" formControlName="terminos" id="terminos" />
+        <label class="form-check-label" for="terminos">
+          Acepto los <a href="#" class="text-danger">Términos y Condiciones</a>
+        </label>
+      </div>
+
+      <div
+        *ngIf="registerForm.get('terminos')?.invalid && registerForm.get('terminos')?.touched"
+        class="text-danger small mb-2"
+      >
+        Debes aceptar los términos y condiciones.
+      </div>
+
+      <!-- Botón de envío-->
+      <button type="submit" class="btn btn-danger w-100" [disabled]="registerForm.invalid">
+        Registrarse
+      </button>
+    </form>
+
+    <div class="text-center mt-3">
+      <small>
+        ¿Ya tienes una cuenta?
+        <a routerLink="/login" class="text-danger">Inicia sesión</a>
+      </small>
+    </div>
+  </div>
+</div>

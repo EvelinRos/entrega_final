@@ -59,9 +59,7 @@ showReservationModal = false;
   
   recibirReserva(data: any) {
       console.log("Reserva recibida:", data);
-
-    // Aquí puedes guardar, enviar al backend, mostrar un modal, etc.
-    // Ejemplo:
+      
       alert(
         `Reserva confirmada:
     Destino: ${data.destino}

@@ -132,10 +132,11 @@ footer ul li::before {
   border-radius: 12px;        
   display: block;
 }
+
 /* Imágenes dentro de las cards de destinos */
 .card-img-top {
   width: 100%;
-  height: 220px;             /* Altura uniforme para todas las tarjetas */
+  height: 220px;            
   object-fit: cover;         
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;

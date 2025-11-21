@@ -1,6 +1,7 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { AuthService } from '../../../services/auth';
 
 @Component({
   selector: 'app-reserva-modal',
@@ -10,6 +11,7 @@ import { FormsModule } from '@angular/forms';
   imports: [CommonModule, FormsModule]
 })
 export class ReservaModal {
+  private auth = inject(AuthService);
 
   @Input() destino = '';
   @Input() precio = 0;
@@ -38,16 +40,27 @@ export class ReservaModal {
   }
 
   confirmarReserva() {
-    this.confirm.emit({
+    const reserva = {
       destino: this.destino,
       descripcion: this.descripcion,
       precio: this.precio,
       viajeros: this.viajeros,
       fecha: this.fecha,
       total: this.total
+    };
+
+    // Enviar al backend
+    this.auth.enviarReserva(reserva).subscribe({
+      next: () => {
+        alert('¡Reserva registrada correctamente!');
+        this.confirm.emit(reserva);
+        this.cerrar();
+      },
+      error: (err) => {
+        console.error(err);
+        alert('Error al registrar la reserva.');
+      }
     });
-    alert('¡Reserva exitosa!');
-    this.cerrar();
   }
 
   cerrar() {

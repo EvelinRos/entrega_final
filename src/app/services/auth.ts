@@ -36,6 +36,14 @@ export class AuthService {
     }
   }
 
+   removeToken() {
+    try {
+      if (typeof window !== 'undefined' && typeof localStorage !== 'undefined') {
+        localStorage.removeItem(this.tokenKey);
+      }
+    } catch {}
+  }
+
   getToken(): string | null {
     try {
       if (typeof window !== 'undefined' && typeof localStorage !== 'undefined') {
@@ -49,15 +57,23 @@ export class AuthService {
 
   getUsuarios() {
   return this.http.get(`${this.apiUrl}/usuarios`);
-}
-
-  removeToken() {
-    try {
-      if (typeof window !== 'undefined' && typeof localStorage !== 'undefined') {
-        localStorage.removeItem(this.tokenKey);
-      }
-    } catch {}
   }
+
+
+  getReservas() {
+    const token = this.getToken();
+    return this.http.get(`${this.apiUrl}/reservas-registradas`, {
+      headers: { Authorization: `Bearer ${token}` }
+    });
+  }
+
+  enviarReserva(data: any) {
+    const token = this.getToken();
+    return this.http.post(`${this.apiUrl}/reserva-modal`, data, {
+      headers: { Authorization: `Bearer ${token}` }
+    });
+  }
+
 
   private decodePayload(token: string) {
     try {

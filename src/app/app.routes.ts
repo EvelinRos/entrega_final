@@ -7,14 +7,12 @@ import { authGuard } from './guards/auth-guard';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
-
   { path: 'login', component: LoginPage },
   { path: 'registrar', component: RegistrarPage },
   { path: 'olvidar-con', component: OlvidarConPage },
-
-  //Rutas protegidas
   { path: 'inicio', component: Inicio, canActivate: [authGuard] },
   { path: 'usuarios', loadComponent: () => import('./pages/usuarios/usuarios').then(m => m.UsuariosPage), canActivate: [authGuard] },
+  { path: 'reservas-registradas', loadComponent: () => import('./pages/reservas-registradas/reservas-registradas').then(m => m.ReservasPage), canActivate: [authGuard] },
 
   { path: '**', redirectTo: 'login' }
 ];

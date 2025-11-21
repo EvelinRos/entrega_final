@@ -1,9 +1,10 @@
 <header class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
   <div class="container">
-    <a class="navbar-brand d-flex align-items-center" href="#">
-      <i class="bi bi-geo-alt text-danger me-2"></i>
-      <span class="fw-bold fs-4">AsiaTravel</span>
+    <a class="navbar-brand d-flex align-items-center" routerLink="/inicio">
+      <img src="assets/img/icon.png" alt="Icono AsiaTravel" class="me-2" class="brand-icon" />
+      <span class="fw-bold fs-4 me-2">AsiaTravel</span>
     </a>
+
     <button
       class="navbar-toggler"
       type="button"
@@ -25,10 +26,11 @@
           <a href="#" class="nav-link">Contacto</a>
         </li>
       </ul>
-      <button class="btn btn-outline-danger ms-3 me-2 d-none d-lg-inline" routerLink="/usuarios">
+      <button class="btn btn-outline-burn ms-3 me-2 d-none d-lg-inline" routerLink="/usuarios">
         <i class="bi bi-people"></i> Ver Usuarios Registrados
       </button>
-      <button class="btn btn-danger" routerLink="/login">
+
+      <button class="btn btn-gradient fw-normal" routerLink="/login">
         <i class="bi bi-box-arrow-right"></i> Cerrar Sesión
       </button>
     </div>
@@ -42,7 +44,7 @@
   <img
     src="assets/img/hero.jpg"
     class="w-100 h-100 object-fit-cover position-absolute top-0 start-0"
-    style="filter: brightness(0.5)"
+    style="filter: brightness(0.48)"
     alt="Fondo Asia"
   />
   <div class="bg-overlay"></div>
@@ -55,7 +57,7 @@
     </p>
 
     <!-- Formulario de búsqueda -->
-    <div class="bg-white rounded-3 p-4 shadow-lg text-dark">
+    <div class="bg-white rounded-3 p-4 my-4 shadow-lg text-dark">
       <form class="row g-3 align-items-end">
         <div class="col-md-3">
           <label class="form-label fw-bold"
@@ -92,7 +94,9 @@
         </div>
 
         <div class="col-md-3">
-          <button type="submit" class="btn btn-danger w-100 py-2">Buscar Viajes</button>
+          <button class="btn btn-gradient w-100 fw-lighter" routerLink="/login">
+            <i class="bi bi-search"></i> Buscar Viajes
+          </button>
         </div>
       </form>
     </div>
@@ -191,7 +195,10 @@
 <!-- DESTINATION CARDS -->
 <section class="py-3 bg-light">
   <div class="header-container d-flex justify-content-end align-items-center p-4">
-    <button class="btn btn-outline-danger me-4" routerLink="/reservas-registradas">
+    <button
+      class="btn btn-outline-burn ms-3 me-2 d-none d-lg-inline"
+      routerLink="/reservas-registradas"
+    >
       <i class="bi bi-people"></i> Ver Reservas Registradas
     </button>
   </div>
@@ -228,7 +235,10 @@
               <span class="fw-bold text-danger"
                 >$2,800 <small class="text-muted d-block">por persona</small></span
               >
-              <button class="btn btn-outline-danger btn-sm" (click)="openModal('tokio')">
+              <button
+                class="btn btn-outline-burn d-none d-lg-inline btn-sm"
+                (click)="openModal('tokio')"
+              >
                 Ver Detalles
               </button>
             </div>
@@ -259,7 +269,10 @@
               <span class="fw-bold text-danger"
                 >$1,200 <small class="text-muted d-block">por persona</small></span
               >
-              <button class="btn btn-outline-danger btn-sm" (click)="openModal('bali')">
+              <button
+                class="btn btn-outline-burn d-none d-lg-inline btn-sm"
+                (click)="openModal('bali')"
+              >
                 Ver Detalles
               </button>
             </div>
@@ -293,7 +306,10 @@
               <span class="fw-bold text-danger"
                 >$950 <small class="text-muted d-block">por persona</small></span
               >
-              <button class="btn btn-outline-danger btn-sm" (click)="openModal('bangkok')">
+              <button
+                class="btn btn-outline-burn d-none d-lg-inline btn-sm"
+                (click)="openModal('bangkok')"
+              >
                 Ver Detalles
               </button>
             </div>
@@ -327,7 +343,10 @@
               <span class="fw-bold text-danger"
                 >$1,800 <small class="text-muted d-block">por persona</small></span
               >
-              <button class="btn btn-outline-danger btn-sm" (click)="openModal('seul')">
+              <button
+                class="btn btn-outline-burn d-none d-lg-inline btn-sm"
+                (click)="openModal('seul')"
+              >
                 Ver Detalles
               </button>
             </div>
@@ -358,7 +377,10 @@
               <span class="fw-bold text-danger"
                 >$2,200 <small class="text-muted d-block">por persona</small></span
               >
-              <button class="btn btn-outline-danger btn-sm" (click)="openModal('singapur')">
+              <button
+                class="btn btn-outline-burn d-none d-lg-inline btn-sm"
+                (click)="openModal('singapur')"
+              >
                 Ver Detalles
               </button>
             </div>
@@ -389,7 +411,10 @@
               <span class="fw-bold text-danger"
                 >$2,400 <small class="text-muted d-block">por persona</small></span
               >
-              <button class="btn btn-outline-danger btn-sm" (click)="openModal('kioto')">
+              <button
+                class="btn btn-outline-burn d-none d-lg-inline btn-sm"
+                (click)="openModal('kioto')"
+              >
                 Ver Detalles
               </button>
             </div>
@@ -419,7 +444,10 @@
               <span class="fw-bold text-danger"
                 >$800 <small class="text-muted d-block">por persona</small></span
               >
-              <button class="btn btn-outline-danger btn-sm" (click)="openModal('halong')">
+              <button
+                class="btn btn-outline-burn d-none d-lg-inline btn-sm"
+                (click)="openModal('halong')"
+              >
                 Ver Detalles
               </button>
             </div>
@@ -453,7 +481,10 @@
               <span class="fw-bold text-danger"
                 >$1,100 <small class="text-muted d-block">por persona</small></span
               >
-              <button class="btn btn-outline-danger btn-sm" (click)="openModal('palawan')">
+              <button
+                class="btn btn-outline-burn d-none d-lg-inline btn-sm"
+                (click)="openModal('palawan')"
+              >
                 Ver Detalles
               </button>
             </div>
@@ -471,7 +502,8 @@
       <div class="row">
         <!-- Información -->
         <div class="col-md-4 mb-4">
-          <h5 class="fw-bold">AsiaTravel</h5>
+          <h3 class="fw-bold mb-3">AsiaTravel</h3>
+
           <p>
             Tu puerta de entrada a las experiencias más auténticas de Asia. Creamos viajes únicos
             que conectan culturas y crean memorias para toda la vida.

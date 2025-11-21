@@ -59,7 +59,6 @@ showReservationModal = false;
   
   recibirReserva(data: any) {
       console.log("Reserva recibida:", data);
-      
       alert(
         `Reserva confirmada:
     Destino: ${data.destino}

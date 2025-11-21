@@ -13,13 +13,13 @@
 
 /* Encabezado */
 .card h3 {
-  color: #d62828;
+  color: #d62828af;
   font-weight: 700;
   letter-spacing: 0.5px;
 }
 
 .card p {
-  color: #9d0208;
+  color: #2b2424;
   font-weight: 500;
 }
 
@@ -42,16 +42,26 @@
   box-shadow: 0 0 0 0.2rem rgba(230, 57, 70, 0.25);
 }
 
-/* Botón principal */
-.btn-danger {
-  background: linear-gradient(135deg, #e63946, #c1121f);
+
+.btn-gradient {
+  background: linear-gradient(135deg, #9e1e1e, #c4472f);
   border: none;
+  color: #fff;
   font-weight: 600;
-  letter-spacing: 0.5px;
+  padding: 10px 18px;
+  border-radius: 8px;
+  transition: all 0.25s ease;
 }
 
-.btn-danger:hover {
-  background: linear-gradient(135deg, #a4161a, #780000);
+.btn-gradient:hover {
+  background: linear-gradient(135deg, #8a1a1a, #b03e29);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+
+.btn-gradient:active {
+  transform: translateY(0);
+  box-shadow: none;
 }
 
 /* Checkbox */

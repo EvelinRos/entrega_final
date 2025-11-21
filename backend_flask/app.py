@@ -53,10 +53,9 @@ def init_db():
     conn.commit()
     conn.close()
 
-# Crear DB al iniciar servidor
+# DB al iniciar servidor
 init_db()
 
-# ------------------ RUTAS ------------------
 
 # Registrar usuario
 @app.post("/registrar")

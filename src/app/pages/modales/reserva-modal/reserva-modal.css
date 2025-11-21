@@ -33,7 +33,7 @@
   color: #2b2b2b;
 }
 
-/* Subtítulo / explicación */
+/* Subtítulo */
 #reservaModal .modal-subtitle {
   color: #6b7280;
   font-size: 0.95rem;
@@ -115,7 +115,7 @@
   filter: brightness(0.97);
 }
 
-/* Footer con precio y botones secundarios */
+/* Footer */
 .reserva-footer {
   display:flex;
   gap: .75rem;

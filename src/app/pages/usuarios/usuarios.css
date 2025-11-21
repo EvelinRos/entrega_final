@@ -36,13 +36,6 @@
   z-index: 10;
 }
 
-.titulo {
-  font-size: 26px;
-  text-align: center;
-  font-weight: 700;
-  margin-bottom: 25px;
-}
-
 /* Tabla */
 .tabla-usuarios {
   width: 100%;

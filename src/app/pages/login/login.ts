@@ -40,9 +40,10 @@ export class LoginPage {
       return;
     }
 
-    const { email, password } = this.loginForm.value;
+    const credentials = this.loginForm.value;
 
-    this.authService.login(email, password).subscribe({
+    //Recibe UN OBJETO
+    this.authService.login(credentials).subscribe({
       next: () => this.router.navigate(['/inicio']),
       error: (err) => {
         this.apiError =

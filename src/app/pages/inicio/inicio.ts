@@ -6,8 +6,9 @@ import { SeulModal } from '../modales/seul-modal/seul-modal';
 import { SingapurModal } from '../modales/singapur-modal/singapur-modal';
 import { KiotoModal } from '../modales/kioto-modal/kioto-modal';
 import { HalongModal } from '../modales/halong-modal/halong-modal';
-import { PalawanModal } from '../modales/palawan-modal/palawan-modal';
-import { RouterModule } from '@angular/router';
+import { PalawanModal} from '../modales/palawan-modal/palawan-modal';
+import { RouterModule, Router} from '@angular/router';
+import { AuthService } from '../../services/auth';
 import { ReservaModal } from '../modales/reserva-modal/reserva-modal';
 
 declare var bootstrap: any;
@@ -20,6 +21,17 @@ declare var bootstrap: any;
   styleUrls: ['./inicio.css']
 })
 export class Inicio {
+
+  constructor(
+    private authService: AuthService,
+    private router: Router
+  ) {}
+
+  logout() {
+    this.authService.logout();   // Elimina token y expiración
+    this.router.navigate(['/login']); // Redirige al usuario
+  }
+
   openModal(modalId: string) {
   const dashFormat = document.getElementById(`modal-${modalId}`);
   const camelFormat = document.getElementById(`modal${modalId.charAt(0).toUpperCase() + modalId.slice(1)}`);
@@ -32,6 +44,7 @@ export class Inicio {
   } else {
     console.warn(`No se encontró el modal con ID modal-${modalId} ni modal${modalId.charAt(0).toUpperCase() + modalId.slice(1)}`);
   }
+
 }
 
 showReservationModal = false;

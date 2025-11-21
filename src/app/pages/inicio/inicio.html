@@ -30,7 +30,7 @@
         <i class="bi bi-people"></i> Ver Usuarios Registrados
       </button>
 
-      <button class="btn btn-gradient fw-normal" routerLink="/login">
+      <button class="btn btn-gradient fw-normal" (click)="logout()">
         <i class="bi bi-box-arrow-right"></i> Cerrar Sesión
       </button>
     </div>
@@ -216,7 +216,13 @@
       <!-- CARD 1 -->
       <div class="col-md-6 col-lg-3">
         <div class="card h-100 shadow-sm border-2 rounded-5">
-          <img src="assets/img/tokio-japon.jpg" class="card-img-top rounded-top-3" alt="Tokio" />
+          <img
+            src="assets/img/tokio-japon.jpg"
+            class="card-img-top rounded-top-3"
+            alt="Tokio"
+            style="filter: brightness(0.8)"
+          />
+
           <div class="card-body">
             <div class="d-flex justify-content-between align-items-center mb-2">
               <span class="badge bg-danger-subtle text-danger">Popular</span>
@@ -249,7 +255,12 @@
       <!-- CARD 2 -->
       <div class="col-md-6 col-lg-3">
         <div class="card h-100 shadow-sm border-2 rounded-5">
-          <img src="assets/img/bali-indonesia.jpg" class="card-img-top rounded-top-3" alt="Bali" />
+          <img
+            src="assets/img/bali-indonesia.jpg"
+            class="card-img-top rounded-top-3"
+            alt="Bali"
+            style="filter: brightness(0.8)"
+          />
           <div class="card-body">
             <div class="d-flex justify-content-between align-items-center mb-2">
               <span class="badge bg-danger-subtle text-danger">Popular</span>
@@ -287,6 +298,7 @@
             src="assets/img/bangkok-tailandia.jpg"
             class="card-img-top rounded-top-3"
             alt="Bangkok"
+            style="filter: brightness(0.8)"
           />
           <div class="card-body">
             <div class="d-flex justify-content-between align-items-center mb-2">
@@ -324,6 +336,7 @@
             src="assets/img/seul-coreadelsur.jpg"
             class="card-img-top rounded-top-3"
             alt="Seúl"
+            style="filter: brightness(0.8)"
           />
           <div class="card-body">
             <div class="d-flex justify-content-between align-items-center mb-2">
@@ -357,7 +370,12 @@
       <!-- CARD 5 -->
       <div class="col-md-6 col-lg-3">
         <div class="card h-100 shadow-sm border-2 rounded-5">
-          <img src="assets/img/singapur.jpg" class="card-img-top rounded-top-3" alt="Seúl" />
+          <img
+            src="assets/img/singapur.jpg"
+            class="card-img-top rounded-top-3"
+            alt="Seúl"
+            style="filter: brightness(0.8)"
+          />
           <div class="card-body">
             <div class="d-flex justify-content-between align-items-center mb-2">
               <span class="badge bg-danger-subtle text-danger">Popular</span>
@@ -391,7 +409,12 @@
       <!-- CARD 6 -->
       <div class="col-md-6 col-lg-3">
         <div class="card h-100 shadow-sm border-2 rounded-5">
-          <img src="assets/img/kioto-japon.jpg" class="card-img-top rounded-top-3" alt="Seúl" />
+          <img
+            src="assets/img/kioto-japon.jpg"
+            class="card-img-top rounded-top-3"
+            alt="Seúl"
+            style="filter: brightness(0.8)"
+          />
           <div class="card-body">
             <div class="d-flex justify-content-between align-items-center mb-2">
               <span class="badge bg-secondary-subtle text-dark">Destino</span>
@@ -425,7 +448,12 @@
       <!-- CARD 7 -->
       <div class="col-md-6 col-lg-3">
         <div class="card h-100 shadow-sm border-2 rounded-5">
-          <img src="assets/img/ha long-vietnam.jpg" class="card-img-top rounded-top-3" alt="Seúl" />
+          <img
+            src="assets/img/ha long-vietnam.jpg"
+            class="card-img-top rounded-top-3"
+            alt="Seúl"
+            style="filter: brightness(0.8)"
+          />
           <div class="card-body">
             <div class="d-flex justify-content-between align-items-center mb-2">
               <span class="badge bg-danger-subtle text-danger">Popular</span>
@@ -462,6 +490,7 @@
             src="assets/img/palawan-filipinas.jpg"
             class="card-img-top rounded-top-3"
             alt="Seúl"
+            style="filter: brightness(0.8)"
           />
           <div class="card-body">
             <div class="d-flex justify-content-between align-items-center">

@@ -1,18 +1,22 @@
-import { inject, PLATFORM_ID } from '@angular/core';
-import { CanActivateFn, Router, UrlTree } from '@angular/router';
+import { inject } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthService } from '../services/auth';
-import { isPlatformBrowser } from '@angular/common';
 
 export const authGuard = () => {
   const auth = inject(AuthService);
   const router = inject(Router);
 
-  const isLogged = auth.isLoggedIn();
+  const token = auth.getToken();
 
-  if (!isLogged) {
-    router.navigate(['/login']);
+  if (!token) {
+    auth.logout(); 
     return false;
   }
+
+  if (auth.isTokenExpired()) {
+    auth.logout();
+    return false;
+  }
+
   return true;
 };
-

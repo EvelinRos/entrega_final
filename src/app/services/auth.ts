@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, tap } from 'rxjs';
+import { jwtDecode } from 'jwt-decode';
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
@@ -15,50 +16,55 @@ export class AuthService {
   }
 
   // ------- LOGIN -------
-  login(email: string, password: string): Observable<any> {
-    return this.http.post(`${this.apiUrl}/login`, { email, password }).pipe(
-      tap((res: any) => {
-        const token = res?.token; 
-        if (token) {
-          this.saveToken(token);
-        }
+  login(credentials: any): Observable<any> {
+      return this.http.post(`${this.apiUrl}/login`, credentials).pipe(
+        tap((response: any) => {
+          const token = response.token;
+
+          sessionStorage.setItem("token", token);
+
+          const expiresAt = Date.now() + 5 * 60 * 1000;
+          sessionStorage.setItem("token_expires", String(expiresAt));
       })
     );
   }
 
-  saveToken(token: string) {
-    try {
-      if (typeof window !== 'undefined' && typeof localStorage !== 'undefined') {
-        localStorage.setItem(this.tokenKey, token);
-      }
-    } catch (e) {
-      console.warn('No se pudo guardar token en localStorage', e);
-    }
-  }
-
-   removeToken() {
-    try {
-      if (typeof window !== 'undefined' && typeof localStorage !== 'undefined') {
-        localStorage.removeItem(this.tokenKey);
-      }
-    } catch {}
-  }
-
+  // Obtener token
   getToken(): string | null {
+    return sessionStorage.getItem("token");
+  }
+
+  // Decodificar token
+  getDecodedToken(token: string) {
     try {
-      if (typeof window !== 'undefined' && typeof localStorage !== 'undefined') {
-        return localStorage.getItem(this.tokenKey);
-      }
+      return jwtDecode(token);
     } catch {
       return null;
     }
-    return null;
+  }
+
+  // Validar expiración
+  isTokenExpired(): boolean {
+    const expires = sessionStorage.getItem("token_expires");
+    if (!expires) return true;
+    return Date.now() > Number(expires);
+  }
+
+  isLoggedIn(): boolean {
+    const token = this.getToken();
+    if (!token) return false;
+    return !this.isTokenExpired();
+  }
+
+  logout(): void {
+    sessionStorage.removeItem("token");
+    sessionStorage.removeItem("token_expires");
+    window.location.href = '/login';
   }
 
   getUsuarios() {
   return this.http.get(`${this.apiUrl}/usuarios`);
   }
-
 
   getReservas() {
     const token = this.getToken();
@@ -73,7 +79,6 @@ export class AuthService {
       headers: { Authorization: `Bearer ${token}` }
     });
   }
-
 
   private decodePayload(token: string) {
     try {
@@ -92,20 +97,5 @@ export class AuthService {
     } catch {
       return null;
     }
-  }
-
-  isTokenExpired(token?: string): boolean {
-    const t = token || this.getToken();
-    if (!t) return true;
-    const payload: any = this.decodePayload(t);
-    if (!payload || !payload.exp) return true;
-    const now = Math.floor(Date.now() / 1000);
-    return payload.exp < now;
-  }
-
-  isLoggedIn(): boolean {
-    const t = this.getToken();
-    if (!t) return false;
-    return !this.isTokenExpired(t);
   }
 }
